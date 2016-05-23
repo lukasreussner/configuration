@@ -40,6 +40,8 @@
   user:
     name: "{{ user_name }}"
     home: "{{ user_home }}"
+    group: "{{ group_name }}"
+    append: yes
     createhome: yes
     shell: /bin/false
     generate_ssh_key: yes

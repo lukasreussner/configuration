@@ -14,9 +14,9 @@ dependencies:
   - role: add-user
     user_name: "{{ themes_user }}"
     user_home: "{{ themes_home }}"
-    group_name: "{{ themes_user }}"
+    group_name: "{{ themes_group }}"
   - role: git-clone
     repo_owner: "{{ themes_user }}"
-    repo_group: "{{ themes_user }}"
+    repo_group: "{{ themes_group }}"
     GIT_REPOS: "{{ THEMES_REPOS }}"
     git_home: "{{ themes_home }}"
