@@ -29,3 +29,4 @@ dependencies:
     repo_group: "{{ edx_service_user }}"
     GIT_REPOS: "{{ edx_service_repos }}"
     git_home: "{{ edx_service_home }}"
+    when: edx_service_repos is defined

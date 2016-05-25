@@ -78,7 +78,7 @@
   file:
     dest: "{{ git_home }}/.ssh/{{ item.REPO }}"
     state: absent
-  when: GIT_REPOS is defined
+  when: item.PROTOCOL == "ssh" and GIT_REPOS is defined
   with_items: GIT_REPOS
   tags:
     - install
