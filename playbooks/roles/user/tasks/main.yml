@@ -105,6 +105,13 @@
     state: "{{ item.state | default('present') }}"
   with_items: user_info
 
+- name: delete user home directory if state is absent
+  file:
+    path: "/home/{{ item.name }}"
+    state: "{{ item.state }}"
+  when: item.state is defined and item.get('state', 'absent') == 'absent'
+  with_items: user_info
+
 - name: assign admin role to admin users
   user:
     name: "{{ item.name }}"
